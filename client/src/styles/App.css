@@ -20,6 +20,12 @@ h3 {
   font-size: 30px;
 }
 
+h4 {
+  font-family: "Noto Sans";
+  font-weight: "bold";
+  font-size: 26px;
+}
+
 p {
   font-family: "Noto Sans";
   font-size: 20px;
