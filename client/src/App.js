@@ -1,12 +1,16 @@
 import './styles/App.css';
-import Video from './components/Video';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import FrontPage from './components/FrontPage';
+import CampaignPage from './components/CampaignPage';
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>Inclusive Helsinki</h1>
-      <Video/>
-    </div>
+    <BrowserRouter> 
+      <Routes>
+        <Route path='/' element={<FrontPage/>} />
+        <Route path='/campaign' element={<CampaignPage/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
