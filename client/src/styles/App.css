@@ -24,3 +24,13 @@ p {
   font-family: "Noto Sans";
   font-size: 20px;
 }
+
+button {
+  font-family: "Bungee";
+  font-size: 18px;
+  background-color: #FF1F1F;
+  color: #FFFFFF;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+}
