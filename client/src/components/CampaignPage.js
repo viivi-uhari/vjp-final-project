@@ -1,26 +1,30 @@
 import '../styles/App.css';
-import logo from '../images/logo.svg';
+import CampaignHeader from './campaign-page/CampaignHeader';
 
 const CampaignPage = () => {
   return (
-    <div style={{ 
-        display: 'flex', 
-        flexDirection: 'column', 
-        alignItems: 'center', 
-        position: 'relative',
-        marginTop: '170px', 
-      }}>
+    <div>
+      <CampaignHeader/>
       <div style={{ 
-        backgroundColor: '#C1EDBB', 
-        width: '100%', 
-        height: '170px',
-        position: 'fixed',
-      }}/>
-      <img src={logo} alt='The logo of the campaign that depicts a heart bench' style={{
-        position: 'fixed',
-        top: 100
-      }}/>
-      <h1 style={{ position: 'fixed', top: 180 }}>Get Involved</h1>
+        display: 'flex', 
+        flexDirection: 'row', 
+        margin: '10%', 
+        alignContent: 'flex-start', 
+        alignItems: 'flex-start' 
+      }}>
+        <div style={{ width: '50%' }}>
+          <h2>Fight for an inclusive Helsinki</h2>
+          <p>
+            Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, 
+            lorem velit accumsan velit vel mattis libero nisl et sem. 
+            Proin interdum maecenas massa turpis sagittis in, 
+            interdum non lobortis vitae massa.
+          </p>
+        </div>
+        <div style={{ width: '50%' }}>
+          <h2>Slider</h2>
+        </div>
+      </div>
     </div>
   );
 }
