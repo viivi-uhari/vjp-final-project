@@ -1,6 +1,10 @@
 import '../../styles/App.css';
 
 const ProgressBar = () => {
+
+  const signatures = 7109;
+  const remainingSignatures = 2891;
+
   return (
     <div style={{ 
         display: 'flex', 
@@ -23,8 +27,8 @@ const ProgressBar = () => {
             marginBottom: '15px'
         }}/>
       </div>
-      <h3 style={{ margin: '10px' }}>7 109 signatures</h3>
-      <p style={{ margin: '5px' }}>2 891 remaining</p>
+      <h3 style={{ margin: '10px' }}>{signatures} signatures</h3>
+      <p style={{ margin: '5px' }}>{remainingSignatures} remaining</p>
     </div>
   );
 }

@@ -1,7 +1,11 @@
 import '../../styles/App.css';
 import heart from '../../images/heart.svg';
 
-const Comment = () => {
+const Comment = ({ name, reason }) => {
+  console.log("test");
+  console.log(name);
+  console.log(reason);
+
   return (
     <div style={{ 
         display: 'flex', 
@@ -9,13 +13,8 @@ const Comment = () => {
         alignItems: 'flex-start',
         alignContent: 'center',
       }}>
-      <h4 style={{ margin: '5px 0px' }}>Example Person</h4>
-      <p>
-        Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, 
-        lorem velit accumsan velit vel mattis libero nisl et sem. 
-        Proin interdum maecenas massa turpis sagittis in, 
-        interdum non lobortis vitae massa.
-      </p>
+      <h4 style={{ margin: '5px 0px' }}>{name}</h4>
+      <p>{reason}</p>
       <div style={{ 
         display: 'flex', 
         flexDirection: 'row', 
