@@ -1,5 +1,4 @@
 import '../../styles/App.css';
-import logo from '../../images/logo.svg';
 
 const ProgressBar = () => {
   return (
