@@ -4,13 +4,11 @@ import ProgressBar from './campaign-page/ProgressBar';
 
 const CampaignPage = () => {
   return (
-    <div>
+    <div style={{ margin: '10%', marginTop: '340px' }}>
       <CampaignHeader/>
       <div style={{ 
         display: 'flex', 
         flexDirection: 'row', 
-        margin: '10%',
-        marginTop: '170px', 
         alignContent: 'flex-start', 
         alignItems: 'center' 
       }}>
@@ -27,6 +25,7 @@ const CampaignPage = () => {
           <ProgressBar/>
         </div>
       </div>
+      <button>Sign the Petition</button>
     </div>
   );
 }
