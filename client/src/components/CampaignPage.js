@@ -1,5 +1,6 @@
 import '../styles/App.css';
 import CampaignHeader from './campaign-page/CampaignHeader';
+import ProgressBar from './campaign-page/ProgressBar';
 
 const CampaignPage = () => {
   return (
@@ -8,9 +9,10 @@ const CampaignPage = () => {
       <div style={{ 
         display: 'flex', 
         flexDirection: 'row', 
-        margin: '10%', 
+        margin: '10%',
+        marginTop: '170px', 
         alignContent: 'flex-start', 
-        alignItems: 'flex-start' 
+        alignItems: 'center' 
       }}>
         <div style={{ width: '50%' }}>
           <h2>Fight for an inclusive Helsinki</h2>
@@ -22,7 +24,7 @@ const CampaignPage = () => {
           </p>
         </div>
         <div style={{ width: '50%' }}>
-          <h2>Slider</h2>
+          <ProgressBar/>
         </div>
       </div>
     </div>
