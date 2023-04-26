@@ -31,7 +31,7 @@ p {
   font-size: 20px;
 }
 
-button {
+.btn-primary {
   font-family: "Bungee";
   font-size: 18px;
   background-color: #FF1F1F;
