@@ -4,7 +4,7 @@ import logo from '../../images/logo.svg';
 const CampaignHeader = () => {
   return (
     <div style={{ 
-        height: '340px',
+        height: 260,
         display: 'flex', 
         flexDirection: 'column', 
         alignItems: 'center', 
@@ -13,15 +13,15 @@ const CampaignHeader = () => {
       <div style={{ 
         backgroundColor: '#C1EDBB', 
         width: '100%', 
-        height: '170px',
+        height: 170,
         position: 'absolute',
-        top: '170px',
+        top: 100,
       }}/>
       <img src={logo} alt='The logo of the campaign that depicts a heart bench' style={{
         position: 'absolute',
-        top: 100
+        top: 30
       }}/>
-      <h1 style={{ position: 'absolute', top: 180 }}>Get Involved</h1>
+      <h1 style={{ position: 'absolute', top: 110 }}>Get Involved</h1>
     </div>
   );
 }

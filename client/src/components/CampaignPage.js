@@ -8,10 +8,10 @@ const CampaignPage = () => {
   // Name and reason
   const reasonsForSinging = [{
     name: 'Example Person',
-    reason: 'Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, \
-      lorem velit accumsan velit vel mattis libero nisl et sem. \
-      Proin interdum maecenas massa turpis sagittis in, \
-      interdum non lobortis vitae massa.'
+    reason: 'Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, '
+      + 'lorem velit accumsan velit vel mattis libero nisl et sem. '
+      + 'Proin interdum maecenas massa turpis sagittis in, '
+      + 'interdum non lobortis vitae massa.'
   }];
 
   return (
@@ -37,8 +37,8 @@ const CampaignPage = () => {
             <ProgressBar/>
           </div>
         </div>
-        <button style={{ marginTop: '20px' }}>Sign the Petition</button>
-        <h2 style={{ marginTop: '85px' }}>Reasons for Signing</h2>
+        <button className='btn-primary' style={{ marginTop: 20 }}>Sign the Petition</button>
+        <h2 style={{ marginTop: 85 }}>Reasons for Signing</h2>
         { reasonsForSinging.map(reasonObject => {
           return (<Comment name={reasonObject.name} reason={reasonObject.reason} />)
         }) }
