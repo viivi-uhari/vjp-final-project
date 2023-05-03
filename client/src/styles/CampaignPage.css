@@ -1,0 +1,9 @@
+.popup-overlay {
+  background-color: rgba(44, 44, 44, 0.47);
+}
+  
+.content {
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  padding: 30px;
+}

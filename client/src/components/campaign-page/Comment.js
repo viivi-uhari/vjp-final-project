@@ -3,9 +3,6 @@ import '../../styles/Comment.css';
 import heart from '../../images/heart.svg';
 
 const Comment = ({ name, reason }) => {
-  console.log("test");
-  console.log(name);
-  console.log(reason);
 
   return (
     <div style={{ 
@@ -35,7 +32,8 @@ const Comment = ({ name, reason }) => {
       <div style={{ 
         backgroundColor: '#959595',
         width: '100%',
-        height: 1 
+        height: 1,
+        marginBottom: 15
       }}/>
     </div>
   );

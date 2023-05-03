@@ -1,18 +1,37 @@
 import '../styles/App.css';
+import '../styles/CampaignPage.css'
+import React, {useState} from 'react';
 import CampaignHeader from './campaign-page/CampaignHeader';
 import ProgressBar from './campaign-page/ProgressBar';
 import Comment from './campaign-page/Comment';
+import FormContent from './campaign-page/FormContent';
+import Popup from 'reactjs-popup';
 
 const CampaignPage = () => {
 
   // Name and reason
-  const reasonsForSinging = [{
+  const [reasonsForSinging, setReasons] = useState([{
     name: 'Example Person',
+    email: 'example@email.com',
     reason: 'Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, '
       + 'lorem velit accumsan velit vel mattis libero nisl et sem. '
       + 'Proin interdum maecenas massa turpis sagittis in, '
-      + 'interdum non lobortis vitae massa.'
-  }];
+      + 'interdum non lobortis vitae massa.',
+    agree: true
+  }]);
+
+  const [currentSigningResponse, setSigningResponse] = useState({
+    name: '',
+    email: '',
+    reason: '',
+    agree: false
+  });
+
+  const handleSubmit = () => {
+    const responseObject = JSON.parse(JSON.stringify(currentSigningResponse));
+    setReasons([...reasonsForSinging, responseObject]);
+    console.log(responseObject);
+  };
 
   return (
     <div>
@@ -34,13 +53,37 @@ const CampaignPage = () => {
             </p>
           </div>
           <div style={{ width: '50%' }}>
-            <ProgressBar/>
+            <ProgressBar newSignatures={reasonsForSinging} />
           </div>
         </div>
-        <button className='btn-primary' style={{ marginTop: 20 }}>Sign the Petition</button>
+        <Popup trigger=
+          { <button className='btn-primary-contained' style={{ marginTop: 20 }}>Sign the Petition</button> }
+            modal nested>
+          { close => (
+            <div className='modal'>
+              <div className='content'>
+              <form>
+                <FormContent response={currentSigningResponse} setResponse={setSigningResponse}/>
+                <button style={{ marginTop: 20, marginRight: 10 }}
+                  className='btn-primary-contained' type='submit' onClick={() => {
+                    handleSubmit();
+                    close();
+                  }} >
+                  Confirm
+                </button>
+                <button
+                  className='btn-primary' onClick={() => close()}>
+                  Cancel
+                </button>
+              </form>
+              </div>
+            </div>
+          )}
+        </Popup>
         <h2 style={{ marginTop: 85 }}>Reasons for Signing</h2>
-        { reasonsForSinging.map(reasonObject => {
-          return (<Comment name={reasonObject.name} reason={reasonObject.reason} />)
+        { reasonsForSinging.map((reasonObject, index) => {
+          return (reasonObject.agree && 
+            <Comment name={reasonObject.name} reason={reasonObject.reason} key={index}/>)
         }) }
       </div>
     </div>
