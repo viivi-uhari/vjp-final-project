@@ -1,10 +1,10 @@
 import '../styles/App.css';
 import '../styles/CampaignPage.css'
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import CampaignHeader from './campaign-page/CampaignHeader';
 import ProgressBar from './campaign-page/ProgressBar';
 import Comment from './campaign-page/Comment';
-import FormContent from './campaign-page/FormContent';
+import PetitionFormContent from './campaign-page/PetitionFormContent';
 import Popup from 'reactjs-popup';
 
 const CampaignPage = () => {
@@ -17,20 +17,49 @@ const CampaignPage = () => {
       + 'lorem velit accumsan velit vel mattis libero nisl et sem. '
       + 'Proin interdum maecenas massa turpis sagittis in, '
       + 'interdum non lobortis vitae massa.',
-    agree: true
+    agree: true,
+    likes: 8,
   }]);
 
   const [currentSigningResponse, setSigningResponse] = useState({
     name: '',
     email: '',
     reason: '',
-    agree: false
+    agree: false,
+    likes: 0,
   });
 
-  const handleSubmit = () => {
+  let [errors, setErrors] = useState([]);
+
+  const validateInputs = (responseObject) => {
+    const currentErrors = [];
+    if (responseObject.name === '' || !responseObject.name.match(/^[a-zA-Z\s]+$/)) {
+      currentErrors.push('You should provide a valid name');
+    };
+    if (responseObject.email === '' || !responseObject.email.match(/^\S+@\S+/)) {
+      currentErrors.push('You should provide a valid email address');
+    };
+    return currentErrors;
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
     const responseObject = JSON.parse(JSON.stringify(currentSigningResponse));
-    setReasons([...reasonsForSinging, responseObject]);
-    console.log(responseObject);
+    const currentErrors = validateInputs(responseObject);
+    setErrors(currentErrors);
+    if (currentErrors.length === 0) {
+      console.log(responseObject);
+      setSigningResponse({
+        name: '',
+        email: '',
+        reason: '',
+        agree: false,
+        likes: 0,
+      });
+      setReasons([...reasonsForSinging, responseObject]);
+      setErrors([]);
+    };
+    return currentErrors;
   };
 
   return (
@@ -63,11 +92,16 @@ const CampaignPage = () => {
             <div className='modal'>
               <div className='content'>
               <form>
-                <FormContent response={currentSigningResponse} setResponse={setSigningResponse}/>
+                <PetitionFormContent response={currentSigningResponse} setResponse={setSigningResponse} />
+                { errors.map((error, index) => { return (
+                  <div key={index} >
+                    <p style={{ fontSize: 16, margin: 0, color: '#FF1F1F' }} >{error}</p><br/>
+                  </div>
+                )}) }
                 <button style={{ marginTop: 20, marginRight: 10 }}
-                  className='btn-primary-contained' type='submit' onClick={() => {
-                    handleSubmit();
-                    close();
+                  className='btn-primary-contained' type='submit' onClick={(event) => {
+                    const currentErrors = handleSubmit(event);
+                    if (currentErrors.length === 0) close();
                   }} >
                   Confirm
                 </button>
@@ -83,7 +117,7 @@ const CampaignPage = () => {
         <h2 style={{ marginTop: 85 }}>Reasons for Signing</h2>
         { reasonsForSinging.map((reasonObject, index) => {
           return (reasonObject.agree && 
-            <Comment name={reasonObject.name} reason={reasonObject.reason} key={index}/>)
+            <Comment reasonObject={reasonObject} index={index} reasonsForSinging={reasonsForSinging} setReasons={setReasons} key={index}/>)
         }) }
       </div>
     </div>

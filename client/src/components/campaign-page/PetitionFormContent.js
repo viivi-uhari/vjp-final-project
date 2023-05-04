@@ -1,8 +1,8 @@
 import '../../styles/FormContent.css'
 import React from 'react';
 
-const FormContent = ({ response, setResponse }) => {
-
+const PetitionFormContent = ({ response, setResponse }) => {
+  
   const setValue = (event, property) => {
     let oldObject = JSON.parse(JSON.stringify(response));
     if (property === 'agree') {
@@ -24,15 +24,15 @@ const FormContent = ({ response, setResponse }) => {
     }}>
       <h2 style={{ marginTop: 10 }} >Sign the Petition</h2>
         <label htmlFor='name' >Name</label>
-        <input type='text' id='name' name='name' 
+        <input type='text' id='name' name='name'
           value={response.name} 
           onChange={(event) => setValue(event, 'name')}/>
         <label htmlFor='email' >Email</label>
-        <input type='email' id='email' name='email' 
+        <input type='email' id='email' name='email' required
           value={response.email}
           onChange={(event) => setValue(event, 'email')}/>
         <label htmlFor='comment' >Comment</label>
-        <textarea type='text' id='comment' name='comment' 
+        <textarea type='text' id='comment' name='comment' style={{ width: '98%' }}
           value={response.reason}
           onChange={(event) => setValue(event, 'reason')}/>
         <div style={{ 
@@ -51,4 +51,4 @@ const FormContent = ({ response, setResponse }) => {
   )
 };
 
-export default FormContent;
+export default PetitionFormContent;

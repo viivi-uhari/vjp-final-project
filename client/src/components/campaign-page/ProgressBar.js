@@ -16,16 +16,16 @@ const ProgressBar = ({ newSignatures }) => {
         alignContent: 'center',
       }}>
       <div style={{
-        backgroundColor: '#EFECEC', 
+        backgroundColor: '#E3DEDE', 
         width: '80%', 
-        height: 25,
+        height: 20,
         borderRadius: 15,
         marginBottom: 15
       }}>
         <div style={{ 
             background: 'linear-gradient(270deg, #FF1F1F 0%, #FFCE1F 100%, #FF1F1F 100%)',
             width: `${ (totalGottenSignatures) / neededSignatures * 100 }%`, 
-            height: 25,
+            height: 20,
             borderRadius: '15px 0px 0px 15px',
             marginBottom: 15
         }}/>
