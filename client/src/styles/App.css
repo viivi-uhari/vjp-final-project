@@ -42,11 +42,34 @@ p {
   cursor: pointer;
 }
 
+.btn-primary-contained:hover {
+  font-family: "Bungee";
+  font-size: 18px;
+  background-color: #AD0000;
+  color: #FFFFFF;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
 .btn-primary {
   font-family: "Bungee";
   font-size: 18px;
   background-color: #FFFFFF;
   color: #FF1F1F;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.btn-primary:hover {
+  font-family: "Bungee";
+  font-size: 18px;
+  background-color: #FFFFFF;
+  color: #AD0000;
   padding: 10px 15px;
   border-radius: 20px;
   border: none;
