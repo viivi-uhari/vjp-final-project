@@ -1,9 +1,9 @@
 import video from '../videos/VJP-video-green.mp4';
-import bench from '../images/bench.gif';
+import videoPoster from '../images/no_to_hostile_2.png'
 
 const Video = () => {
   return (
-    <video width="600" height="340" src={video} controls poster={bench}>
+    <video width="600" height="340" src={video} controls poster={videoPoster}>
       <source type="video/mp4" />
         Your browser does not support the video tag.
     </video>

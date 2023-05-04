@@ -1,0 +1,21 @@
+#missionContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    gap: 50px;
+    max-width: 1300px;
+}
+
+#missionFrame {
+    width: 250px;
+}
+
+#headerContainer {
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+img {
+    margin: 0;
+}
