@@ -32,7 +32,7 @@ p {
   font-size: 20px;
 }
 
-.btn-primary {
+.btn-primary-contained {
   font-family: "Bungee";
   font-size: 18px;
   background-color: #FF1F1F;
@@ -40,6 +40,18 @@ p {
   padding: 10px 15px;
   border-radius: 20px;
   border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  font-family: "Bungee";
+  font-size: 18px;
+  background-color: #FFFFFF;
+  color: #FF1F1F;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
 }
 
 #test {
