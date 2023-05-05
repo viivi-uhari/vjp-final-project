@@ -75,3 +75,45 @@ p {
   border: none;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 650px){ 
+
+  h1 { font-size: 7vw; }
+  h2 { font-size: 5.5vw; }
+  h3 { font-size: 4.7vw; }
+  h4 { font-size: 4vw; }
+  p { font-size: 3vw; }
+
+  .btn-primary-contained {
+    font-size: 2.5vw;
+    padding: 2% 3%;
+  }
+  
+  .btn-primary {
+    font-size: 2.5vw;
+    padding: 2% 3%;
+  }
+
+}
+
+@media only screen and (max-width: 480px){ 
+
+  .btn-primary-contained {
+    font-size: 12px;
+    padding: 7.7px 11.5px;
+  }
+  
+  .btn-primary {
+    font-size: 12px;
+    padding: 7.7px 11.5px;
+  }
+
+}
+
+@media only screen and (max-width: 400px){ 
+
+  h3 { font-size: 17px; }
+  h4 { font-size: 15px; }
+  p { font-size: 12px; }
+
+}
