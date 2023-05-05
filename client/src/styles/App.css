@@ -43,14 +43,8 @@ p {
 }
 
 .btn-primary-contained:hover {
-  font-family: "Bungee";
-  font-size: 18px;
   background-color: #AD0000;
   color: #FFFFFF;
-  padding: 10px 15px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
 }
 
 .btn-primary {
