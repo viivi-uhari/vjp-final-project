@@ -1,4 +1,5 @@
 import '../../styles/App.css';
+import '../../styles/ProgressBar.css';
 
 const neededSignatures = 10000;
 const oldSignatures = 7108;
@@ -9,29 +10,20 @@ const ProgressBar = ({ newSignatures }) => {
   const totalGottenSignatures = oldSignatures + gottenSignatures;
 
   return (
-    <div style={{ 
-        display: 'flex', 
-        flexDirection: 'column', 
-        alignItems: 'center',
-        alignContent: 'center',
-      }}>
-      <div style={{
+    <div className='progress-bar-template'>
+      <div className='progress-bar' style={{
         backgroundColor: '#E3DEDE', 
-        width: '80%', 
-        height: 20,
         borderRadius: 15,
-        marginBottom: 15
+        width: '80%',
       }}>
-        <div style={{ 
+        <div className='actual-progress-bar' style={{ 
             background: 'linear-gradient(270deg, #FF1F1F 0%, #FFCE1F 100%, #FF1F1F 100%)',
             width: `${ (totalGottenSignatures) / neededSignatures * 100 }%`, 
-            height: 20,
             borderRadius: '15px 0px 0px 15px',
-            marginBottom: 15
         }}/>
       </div>
-      <h3 style={{ margin: 10 }}>{totalGottenSignatures} signatures</h3>
-      <p style={{ margin: 5 }}>{neededSignatures - totalGottenSignatures} remaining</p>
+      <h3 id='total-signatures' >{totalGottenSignatures} signatures</h3>
+      <p id='remaining-signatures' >{neededSignatures - totalGottenSignatures} remaining</p>
     </div>
   );
 }

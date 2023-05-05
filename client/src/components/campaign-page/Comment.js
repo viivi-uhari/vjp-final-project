@@ -40,6 +40,7 @@ const Comment = ({ reasonObject, index, reasonsForSinging, setReasons }) => {
         flexDirection: 'column', 
         alignItems: 'flex-start',
         alignContent: 'center',
+        width: '100%',
       }}>
       <h4 style={{ margin: '5px 0px' }}>{reasonObject.name}</h4>
       { !canEdit && <p>{reasonObject.reason}</p> }
@@ -53,32 +54,27 @@ const Comment = ({ reasonObject, index, reasonsForSinging, setReasons }) => {
         alignItems: 'center',
         marginBottom: 15
       }}>
-        <button className='btn-icon' disabled={canEdit}
+        <button className='btn-icon'
           onClick={() => changeLike(index) }
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut} >
-          { (!isHovering && !isLiked) && <img src={heartWhite} alt='A white heart which means you have not liked this comment' /> }
-          { ((isHovering && !canEdit) || (isLiked && !canEdit)) && <img src={heartPink} alt='A pink heart which means you have liked this comment' /> }
-          { (isHovering && canEdit && !isLiked) && <img src={heartWhite} alt='A white heart which means you have not liked this comment' /> }
-          { ((isHovering && canEdit && isLiked) || (!isHovering && canEdit && isLiked)) && <img src={heartPink} alt='A pink heart which means you have liked this comment' /> }
+          { (!isHovering && !isLiked) && <img id='white-heart-icon' src={heartWhite} alt='A white heart which means you have not liked this comment' /> }
+          { (isHovering || isLiked) && <img id='pink-heart-icon' src={heartPink} alt='A pink heart which means you have liked this comment' /> }
+          {/* (isHovering && canEdit && !isLiked) && <img src={heartWhite} alt='A white heart which means you have not liked this comment' /> */}
+          {/* ((isHovering && canEdit && isLiked) || (!isHovering && canEdit && isLiked)) && <img src={heartPink} alt='A pink heart which means you have liked this comment' /> */}
         </button>
-        <p style={{ margin: '0 12px' }}>{reasonObject.likes}</p>
-        <div style={{ 
-          borderRadius: '100%', 
-          height: 5, 
-          width: 5, 
-          backgroundColor: '#3C3C3C' 
-        }}/>
-        { !canEdit && 
-          <button className='btn-small' style={{ margin: '0 12px' }} 
+        <p id='likes-count' >{reasonObject.likes}</p>
+        { reasonObject.currentUser && <div id='dot' /> }
+        { reasonObject.currentUser && !canEdit && 
+          <button className='btn-small'
             onClick={() => setEdit(!canEdit) }>
             Edit
           </button> }
-        { canEdit && 
-          <button className='btn-small' style={{ margin: '0 12px' }} 
+        { reasonObject.currentUser && canEdit && 
+          <button className='btn-small'
             onClick={() => setEdit(!canEdit) }>
             Confirm
-        </button> }
+          </button> }
       </div>
       <div style={{ 
         backgroundColor: '#959595',

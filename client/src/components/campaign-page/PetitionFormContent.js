@@ -1,8 +1,8 @@
-import '../../styles/FormContent.css'
+import '../../styles/PetitionFormContent.css'
 import React from 'react';
 
-const PetitionFormContent = ({ response, setResponse }) => {
-  
+const PetitionFormContent = ({ response, setResponse, errors }) => {
+
   const setValue = (event, property) => {
     let oldObject = JSON.parse(JSON.stringify(response));
     if (property === 'agree') {
@@ -43,10 +43,15 @@ const PetitionFormContent = ({ response, setResponse }) => {
           <input style={{ marginRight: 15 }} type='checkbox' id='agree' name='agree' 
             checked={response.agree}
             onChange={(event) => setValue(event, 'agree')}/>
-          <label htmlFor='agree' style={{ fontSize: 16 }} >
+          <label htmlFor='agree' id='checkbox-label' >
             I agree that my name and comment can be displayed publicly
           </label>
         </div>
+        { errors.map((error, index) => { return (
+          <div key={index} >
+            <p className='error-message' >{error}</p>
+          </div>
+        )}) }
     </div>
   )
 };
