@@ -5,6 +5,8 @@ import MissionFrame from './front-page/MissionFrame';
 import mission_img_1 from '../images/mission_img_1.png';
 import mission_img_2 from '../images/mission_img_2.png';
 import mission_img_3 from '../images/mission_img_3.png';
+import logo from '../images/logo.svg';
+
 
 const missionData = [
   {
@@ -28,11 +30,11 @@ const FrontPage = () => {
   return (
     <div style={{ margin: '3% 10% 10% 10%' }}>
       <div id='headerContainer'>
-        <div>
-          <h1>Inclusive Helsinki</h1>
-          <p>Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, lorem velit accumsan velit vel mattis libero nisl et sem. Proin interdum maecenas massa turpis sagittis in, interdum non lobortis vitae massa. </p>
+        <div id='textContainer'>
+          <h1 style={{ margin: '30px 0px' }}>Inclusive Helsinki</h1>
+          <p style={{ margin: '30px 0px' }}>Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, lorem velit accumsan velit vel mattis libero nisl et sem. Proin interdum maecenas massa turpis sagittis in, interdum non lobortis vitae massa. </p>
         </div>
-        { /*<img src={} width='160px' alt='Inclusive helsinki logo'/> */ }
+        <img src={logo} width='400px' alt='Inclusive helsinki logo'/>
       </div>
       <h2>Our mission</h2>
       <div id='missionContainer'>
