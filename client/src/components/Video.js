@@ -1,5 +1,6 @@
 import video from '../videos/VJP-video-green.mp4';
 import videoPoster from '../images/no_to_hostile_2.png'
+import '../styles/FrontPage.css'
 
 const Video = () => {
   return (

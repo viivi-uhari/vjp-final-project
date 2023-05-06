@@ -31,10 +31,15 @@ const FrontPage = () => {
     <div style={{ margin: '3% 10% 10% 10%' }}>
       <div id='headerContainer'>
         <div id='textContainer'>
-          <h1 style={{ margin: '30px 0px' }}>Inclusive Helsinki</h1>
+          <div id='h1Container'>
+            <h1 style={{ margin: '30px 0px' }}>Inclusive Helsinki</h1>
+            <div>
+              <img id='logoImgMobile' src={logo} alt='Inclusive helsinki logo'/>
+            </div>
+          </div>
           <p style={{ margin: '30px 0px' }}>Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, lorem velit accumsan velit vel mattis libero nisl et sem. Proin interdum maecenas massa turpis sagittis in, interdum non lobortis vitae massa. </p>
         </div>
-        <img src={logo} width='400px' alt='Inclusive helsinki logo'/>
+        <img id='logoImg' src={logo} width='350px' alt='Inclusive helsinki logo'/>
       </div>
       <h2>Our mission</h2>
       <div id='missionContainer'>
