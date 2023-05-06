@@ -5,7 +5,7 @@
 }
   
 #navBar {
-  font-family: "Russo One";
+  font-family: "Bungee";
   font-size: 20px;
   margin: 35px 10%;
   display: flex;
@@ -28,15 +28,15 @@
 }
 
 #navBar a:hover {
-  background-color: #104409;
+  background-color: #000;
   color: #FFFFFF;
-  border: none;
-  text-decoration: none;
 }
 
 @media only screen and (max-width: 650px){ 
 
   #navBar {
+    margin: 35px 7%;
+    min-width: 70px;
     margin: 35px 7%;
   }
 
