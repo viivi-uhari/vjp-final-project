@@ -41,13 +41,13 @@ const FrontPage = () => {
         </div>
         <img id='logoImg' src={logo} width='350px' alt='Inclusive helsinki logo'/>
       </div>
-      <h2>Our mission</h2>
+      <h2 className='sub-title' >Our mission</h2>
       <div id='missionContainer'>
         <MissionFrame image={missionData[0].image} header={missionData[0].header} text={missionData[0].text}/>
         <MissionFrame image={missionData[1].image} header={missionData[1].header} text={missionData[1].text}/>
         <MissionFrame image={missionData[2].image} header={missionData[2].header} text={missionData[2].text}/>
       </div>
-      <h2>Learn more</h2>
+      <h2 className='sub-title' >Learn more</h2>
       <Video/>
     </div>
   );

@@ -1,0 +1,68 @@
+
+.progress-bar-template {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.progress-bar {
+  height: 20px;
+  margin-bottom: 15px;
+}
+
+.actual-progress-bar {
+  height: 20px;
+  margin-bottom: 15px;
+}
+
+#total-signatures {
+  margin: 10px
+}
+
+#remaining-signatures {
+  margin: 5px
+}
+
+@media only screen and (min-width: 851px) { 
+
+  .progress-bar-template {
+    width: 50%;
+  }
+  
+}
+
+@media only screen and (max-width: 850px){ 
+
+  .progress-bar-template {
+    width: 100%;
+    margin: 40px 0px 15px 0px;
+  }
+  
+}
+
+@media only screen and (max-width: 650px){ 
+  
+  .progress-bar {
+    height: 3vw;
+    margin-bottom: 2vw;
+  }
+
+  .actual-progress-bar {
+    height: 100%;
+    margin-bottom: 100%;
+  }
+
+  .progress-bar-template {
+    margin: 8% 0px 2% 0px;
+  }
+
+  #total-signatures {
+    margin: 2%
+  }
+
+  #remaining-signatures {
+    margin: 0.5%
+  }
+
+}

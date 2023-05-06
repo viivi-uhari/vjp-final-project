@@ -1,0 +1,52 @@
+label {
+  font-family: "Noto Sans";
+  font-size: 20px;
+  display: 'flex';
+  flex-direction: 'column';
+}
+
+#checkbox-label {
+  font-size: 16px;
+}
+
+.error-message {
+  font-size: 16px;
+  margin: 0px;
+  color: #FF1F1F;
+}
+
+@media only screen and (max-width: 650px){ 
+
+  label { 
+    font-size: 3vw;
+  }
+
+  #checkbox-label {
+    font-size: 2.5vw;
+  }
+
+  .error-message {
+    font-size: 2.5vw;
+  }
+
+}
+
+@media only screen and (max-width: 480px){ 
+
+  #checkbox-label {
+    font-size: 12px;
+  }
+
+  .error-message {
+    font-size: 12px;
+  }
+
+}
+
+@media only screen and (max-width: 400px){ 
+
+  label { 
+    font-size: 12px;
+  }
+
+}

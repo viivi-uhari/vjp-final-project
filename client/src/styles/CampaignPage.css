@@ -1,0 +1,89 @@
+
+#campaign-page-body {
+  margin: 3% 10% 10% 10%;
+}
+
+#reasons-for-signing {
+  align-self: flex-start;
+  margin-top: 85px;
+}
+
+.popup-overlay {
+  background-color: rgba(44, 44, 44, 0.47);
+}
+  
+.content {
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  padding: 30px;
+}
+
+#signing-btn {
+  margin-top: 20px
+}
+
+@media only screen and (min-width: 851px) { 
+
+  #campaign-page-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row; 
+    align-content: flex-start;
+    align-items: center;
+  }
+
+  .info-text {
+    width: 50%;
+    margin-right: 15px;
+  }
+
+}
+
+@media only screen and (max-width: 850px){ 
+
+  #campaign-page-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column; 
+    align-content: flex-start;
+    align-items: center;
+  }
+
+  .info-text {
+    width: 100%;
+  }
+
+}
+
+@media only screen and (max-width: 650px){ 
+
+  #reasons-for-signing {
+    align-self: flex-start;
+    margin-top: 13%;
+  }
+
+  #signing-btn {
+    margin-top: 3%
+  }
+
+}
+
+
+@media only screen and (max-width: 480px){ 
+
+  .content {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+}
