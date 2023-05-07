@@ -51,7 +51,7 @@ const CampaignPage = () => {
   // Function to validate whether the given name and email are of the right format
   const validateInputs = (responseObject) => {
     const currentErrors = [];
-    if (responseObject.name === '' || !responseObject.name.match(/^[a-zA-Z\s]+$/)) {
+    if (responseObject.name === '' || !responseObject.name.match(/^[\p{Letter}\p{Mark} ]+$/u)) {
       currentErrors.push('You should provide a valid name');
     }
     if (responseObject.email === '' || !responseObject.email.match(/^\S+@\S+/)) {
@@ -67,7 +67,6 @@ const CampaignPage = () => {
     const currentErrors = validateInputs(responseObject);
     setErrors(currentErrors);
     if (currentErrors.length === 0) {
-      console.log(responseObject);
       setSigningResponse({
         name: '',
         email: '',
