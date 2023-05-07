@@ -107,7 +107,10 @@ const CampaignPage = () => {
                   Confirm
                 </button>
                 <button
-                  className='btn-primary' onClick={() => close()}>
+                  className='btn-primary' onClick={(event) => {
+                    event.preventDefault();
+                    close();
+                  }}>
                   Cancel
                 </button>
               </form>
