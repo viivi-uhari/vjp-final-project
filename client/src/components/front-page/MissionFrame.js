@@ -1,5 +1,7 @@
 import '../../styles/FrontPage.css';
 
+// A component that diplays the mission frame's icon, heading and info text
+
 const MissionFrame = ({ image, header, text }) => {
   return (
     <div id='mission-frame'>

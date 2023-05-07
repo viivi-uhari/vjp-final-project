@@ -1,8 +1,11 @@
 import '../../styles/App.css';
 import '../../styles/ProgressBar.css';
 
+// A component that consists the progress bar and sub headings indicating
+// how many signatures have already been gotten and how many are still needed
+
 const neededSignatures = 10000;
-const oldSignatures = 7108;
+const oldSignatures = 7108;  // A count of signatures that could have been gotten before
 
 const ProgressBar = ({ newSignatures }) => {
 

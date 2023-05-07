@@ -4,6 +4,10 @@ import FrontPage from './components/FrontPage';
 import CampaignPage from './components/CampaignPage';
 import NavigationBar from './components/NavigationBar';
 
+// This application is divided into two pages: 
+// the front page that displays general information,
+// and the campaign page where a user can sign the campaign's petition
+
 const App = () => {
   return (
     <BrowserRouter>

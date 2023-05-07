@@ -7,7 +7,7 @@ import mission_img_2 from '../images/mission_img_2.png';
 import mission_img_3 from '../images/mission_img_3.png';
 import logo from '../images/logo.svg';
 
-
+// Data used for the 'Our mission' frames
 const missionData = [
   {
     image: mission_img_1,

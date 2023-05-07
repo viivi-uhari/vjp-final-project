@@ -1,8 +1,12 @@
 import '../../styles/PetitionFormContent.css';
 import React from 'react';
 
+// A component that displays the content of the form used for signing the petition.
+
 const PetitionFormContent = ({ response, setResponse, errors }) => {
 
+  // Function for setting the values of the input fields: 
+  // name, email, comment and agreement for displaying the answer publically
   const setValue = (event, property) => {
     let oldObject = JSON.parse(JSON.stringify(response));
     if (property === 'agree') {
@@ -47,7 +51,8 @@ const PetitionFormContent = ({ response, setResponse, errors }) => {
             I agree that my name and comment can be displayed publicly
           </label>
         </div>
-        { errors.map((error, index) => { return (
+        { /* If the name or email aren't of the right format, display the errors indicating this */
+          errors.map((error, index) => { return (
           <div key={index}>
             <p className='error-message'>{error}</p>
           </div>

@@ -2,6 +2,9 @@ import '../../styles/App.css';
 import '../../styles/CampaignHeader.css';
 import logo from '../../images/logo.svg';
 
+// A component that displays the top components of the campaign page:
+// green background, logo and heading
+
 const CampaignHeader = () => {
   return (
     <div id='campaign-header' style={{
