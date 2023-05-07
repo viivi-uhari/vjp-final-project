@@ -1,4 +1,4 @@
-import '../../styles/PetitionFormContent.css'
+import '../../styles/PetitionFormContent.css';
 import React from 'react';
 
 const PetitionFormContent = ({ response, setResponse, errors }) => {
@@ -22,16 +22,16 @@ const PetitionFormContent = ({ response, setResponse, errors }) => {
       alignContent: 'center',
       gap: 10
     }}>
-      <h2 style={{ marginTop: 10 }} >Sign the Petition</h2>
-        <label htmlFor='name' >Name</label>
+      <h2 style={{ marginTop: 10 }}>Sign the Petition</h2>
+        <label htmlFor='name'>Name</label>
         <input type='text' id='name' name='name'
           value={response.name} 
           onChange={(event) => setValue(event, 'name')}/>
-        <label htmlFor='email' >Email</label>
-        <input type='email' id='email' name='email' required
+        <label htmlFor='email'>Email</label>
+        <input type='email' id='email' name='email'
           value={response.email}
           onChange={(event) => setValue(event, 'email')}/>
-        <label htmlFor='comment' >Comment</label>
+        <label htmlFor='comment'>Comment</label>
         <textarea type='text' id='comment' name='comment' style={{ width: '98%' }}
           value={response.reason}
           onChange={(event) => setValue(event, 'reason')}/>
@@ -43,13 +43,13 @@ const PetitionFormContent = ({ response, setResponse, errors }) => {
           <input style={{ marginRight: 15 }} type='checkbox' id='agree' name='agree' 
             checked={response.agree}
             onChange={(event) => setValue(event, 'agree')}/>
-          <label htmlFor='agree' id='checkbox-label' >
+          <label htmlFor='agree' id='checkbox-label'>
             I agree that my name and comment can be displayed publicly
           </label>
         </div>
         { errors.map((error, index) => { return (
-          <div key={index} >
-            <p className='error-message' >{error}</p>
+          <div key={index}>
+            <p className='error-message'>{error}</p>
           </div>
         )}) }
     </div>

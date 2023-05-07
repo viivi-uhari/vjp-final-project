@@ -28,7 +28,7 @@
   cursor: default;
 }
 
-#dot {
+.dot {
   border-radius: 100%;
   height: 5px;
   width: 5px;
@@ -37,7 +37,7 @@
   background-color: #3C3C3C;
 }
 
-#likes-count {
+.likes-count {
   margin: 0 12px
 }
 
@@ -49,22 +49,22 @@
     margin: 0px 2vw;
   }
 
-  #dot {
+  .dot {
     max-height: 4px;
     max-width: 4px;
   }
 
-  #white-heart-icon {
+  .white-heart-icon {
     width: 4vw;
     height: 100%;
   }
 
-  #pink-heart-icon {
+  .pink-heart-icon {
     width: 4vw;
     height: 100%;
   }
 
-  #likes-count {
+  .likes-count {
     margin: 0 3vw
   }
 

@@ -1,11 +1,11 @@
+import '../styles/App.css';
+import '../styles/CampaignPage.css';
 import React, { useState } from 'react';
 import CampaignHeader from './campaign-page/CampaignHeader';
 import ProgressBar from './campaign-page/ProgressBar';
 import Comment from './campaign-page/Comment';
 import PetitionFormContent from './campaign-page/PetitionFormContent';
 import Popup from 'reactjs-popup';
-import '../styles/App.css';
-import '../styles/CampaignPage.css';
 
 const CampaignPage = () => {
 
@@ -47,10 +47,10 @@ const CampaignPage = () => {
     const currentErrors = [];
     if (responseObject.name === '' || !responseObject.name.match(/^[a-zA-Z\s]+$/)) {
       currentErrors.push('You should provide a valid name');
-    };
+    }
     if (responseObject.email === '' || !responseObject.email.match(/^\S+@\S+/)) {
       currentErrors.push('You should provide a valid email address');
-    };
+    }
     return currentErrors;
   };
 
@@ -70,29 +70,28 @@ const CampaignPage = () => {
       });
       setReasons([...reasonsForSinging, responseObject]);
       setErrors([]);
-    };
+    }
     return currentErrors;
   };
 
   return (
     <div>
       <CampaignHeader/>
-      <div id="campaign-page-body">
-        <div className='info'>
-          <div className='info-text' >
+      <div id='campaign-page-body'>
+        <div id='info-section'>
+          <div id='info-text'>
             <h2>Fight for an Inclusive Helsinki</h2>
             <p>
               Hostile architecture disproportionately affects marginalized communities,
               including those who are homeless, disabled, or living in poverty.
               By signing this petition to end hostile architecture in Helsinki,
-              we can help advocate for social justice and equity in our city. 
-              
+              we can help advocate for social justice and equity in our city.
             </p>
           </div>
-          <ProgressBar newSignatures={reasonsForSinging} />
+          <ProgressBar newSignatures={reasonsForSinging}/>
         </div>
         <Popup trigger=
-          { <button id='signing-btn' className='btn-primary-contained' >Sign the Petition</button> }
+          { <button id='signing-btn' className='btn-primary-contained'>Sign the Petition</button> }
             modal nested>
           { close => (
             <div className='modal'>
@@ -103,7 +102,7 @@ const CampaignPage = () => {
                   className='btn-primary-contained' type='submit' onClick={(event) => {
                     const currentErrors = handleSubmit(event);
                     if (currentErrors.length === 0) close();
-                  }} >
+                  }}>
                   Confirm
                 </button>
                 <button
@@ -118,7 +117,7 @@ const CampaignPage = () => {
             </div>
           )}
         </Popup>
-        <h2 id='reasons-for-signing' >Reasons for Signing</h2>
+        <h2 id='reasons-for-signing'>Reasons for Signing</h2>
         { reasonsForSinging.map((reasonObject, index) => {
           return (reasonObject.agree && 
             <Comment reasonObject={reasonObject} index={index} reasonsForSinging={reasonsForSinging} setReasons={setReasons} key={index}/>)

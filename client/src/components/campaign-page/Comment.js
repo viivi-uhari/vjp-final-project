@@ -1,6 +1,6 @@
 import '../../styles/App.css';
 import '../../styles/Comment.css';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import heartWhite from '../../images/heart_white.svg';
 import heartPink from '../../images/heart_pink.svg';
 
@@ -36,18 +36,18 @@ const Comment = ({ reasonObject, index, reasonsForSinging, setReasons }) => {
 
   return (
     <div style={{ 
-        display: 'flex', 
-        flexDirection: 'column', 
-        alignItems: 'flex-start',
-        alignContent: 'center',
-        width: '100%',
-      }}>
+      display: 'flex', 
+      flexDirection: 'column', 
+      alignItems: 'flex-start',
+      alignContent: 'center',
+      width: '100%',
+    }}>
       <h4 style={{ margin: '5px 0px' }}>{reasonObject.name}</h4>
       { !canEdit && <p>{reasonObject.reason}</p> }
-      { canEdit && <textarea type='text' id='comment' name='comment' 
+      { canEdit && <textarea type='text' id='existing-comment' name='existing-comment' 
         style={{ width: '98%', margin: '20px 0px' }}
         value={reasonObject.reason}
-        onChange={(event) => setValue(event)} /> }
+        onChange={(event) => setValue(event)}/> }
       <div style={{ 
         display: 'flex', 
         flexDirection: 'row', 
@@ -55,16 +55,16 @@ const Comment = ({ reasonObject, index, reasonsForSinging, setReasons }) => {
         marginBottom: 15
       }}>
         <button className='btn-icon'
-          onClick={() => changeLike(index) }
+          onClick={() => changeLike(index)}
           onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut} >
-          { (!isHovering && !isLiked) && <img id='white-heart-icon' src={heartWhite} alt='A white heart which means you have not liked this comment' /> }
-          { (isHovering || isLiked) && <img id='pink-heart-icon' src={heartPink} alt='A pink heart which means you have liked this comment' /> }
-          {/* (isHovering && canEdit && !isLiked) && <img src={heartWhite} alt='A white heart which means you have not liked this comment' /> */}
-          {/* ((isHovering && canEdit && isLiked) || (!isHovering && canEdit && isLiked)) && <img src={heartPink} alt='A pink heart which means you have liked this comment' /> */}
+          onMouseOut={handleMouseOut}>
+          { (!isHovering && !isLiked) && <img className='white-heart-icon' src={heartWhite} 
+            alt='A white heart which means you have not liked this comment'/> }
+          { (isHovering || isLiked) && <img className='pink-heart-icon' src={heartPink} 
+            alt='A pink heart which means you have liked this comment'/> }
         </button>
-        <p id='likes-count' >{reasonObject.likes}</p>
-        { reasonObject.currentUser && <div id='dot' /> }
+        <p className='likes-count'>{reasonObject.likes}</p>
+        { reasonObject.currentUser && <div className='dot'/> }
         { reasonObject.currentUser && !canEdit && 
           <button className='btn-small'
             onClick={() => setEdit(!canEdit) }>
