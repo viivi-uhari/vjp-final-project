@@ -12,17 +12,17 @@ const missionData = [
   {
     image: mission_img_1,
     header: 'Raise Awareness',
-    text: 'Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, lorem velit accumsan velit vel mattis libero nisl et sem.'
+    text: 'We strive to educate and inform the public about the ways in which hostile architecture can perpetuate exclusion and discrimination.'
   },
   {
     image: mission_img_2,
     header: 'Take Action',
-    text: 'Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, lorem velit accumsan velit vel mattis libero nisl et sem.'
+    text: 'We are committed to working with local communities, architects, and policymakers to create inclusive public spaces that are welcoming to all.'
   },
   {
     image: mission_img_3,
     header: 'Create Change',
-    text: 'Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, lorem velit accumsan velit vel mattis libero nisl et sem.'
+    text: 'Our aim is to create a more just society where everyone has the right to access public spaces without fear of being excluded by the environment.'
   }
 ];
 
@@ -37,7 +37,13 @@ const FrontPage = () => {
               <img id='logoImgMobile' src={logo} alt='Inclusive helsinki logo'/>
             </div>
           </div>
-          <p style={{ margin: '30px 0px' }}>Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, lorem velit accumsan velit vel mattis libero nisl et sem. Proin interdum maecenas massa turpis sagittis in, interdum non lobortis vitae massa. </p>
+          <p style={{ margin: '30px 0px' }}>
+            Our campaign is dedicated to ending the use of hostile architecture in Helsinki.
+            We believe that everyone has the right to access and enjoy public spaces
+            without fear of being targeted or excluded by the built environment.
+            Our mission is to raise awareness of the harms of hostile architecture, advocate for its removal,
+            and promote alternative designs that prioritize accessibility, safety, and inclusivity.
+          </p>
         </div>
         <img id='logoImg' src={logo} width='350px' alt='Inclusive helsinki logo'/>
       </div>

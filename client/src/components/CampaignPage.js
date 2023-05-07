@@ -11,23 +11,22 @@ const CampaignPage = () => {
 
   // Name and reason
   const [reasonsForSinging, setReasons] = useState([{
-    name: 'Example Person',
+    name: 'Jane Doe',
     email: 'example@email.com',
-    reason: 'Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, '
-      + 'lorem velit accumsan velit vel mattis libero nisl et sem. '
-      + 'Proin interdum maecenas massa turpis sagittis in, '
-      + 'interdum non lobortis vitae massa.',
+    reason: 'Public spaces are meant to be shared by everyone, '
+      + 'and hostile architecture creates an environment of hostility and exclusion. '
+      + 'By promoting more inclusive designs, '
+      + 'we can foster a sense of community and belonging in our public spaces.',
     agree: true,
     likes: 8,
     currentUser: false
   },
   {
-    name: 'Another Example',
+    name: 'Joe Citizen',
     email: 'example.email@email.com',
-    reason: 'Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, '
-      + 'lorem velit accumsan velit vel mattis libero nisl et sem. '
-      + 'Proin interdum maecenas massa turpis sagittis in, '
-      + 'interdum non lobortis vitae massa.',
+    reason: 'Elements of hostile architecture, such as metal spikes and bars '
+      + 'are both unattractive and may cause harm to people. '
+      + 'Removing these features will create safer public spaces for everyone.',
     agree: true,
     likes: 3,
     currentUser: false
@@ -83,10 +82,11 @@ const CampaignPage = () => {
           <div className='info-text' >
             <h2>Fight for an Inclusive Helsinki</h2>
             <p>
-              Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, 
-              lorem velit accumsan velit vel mattis libero nisl et sem. 
-              Proin interdum maecenas massa turpis sagittis in, 
-              interdum non lobortis vitae massa.
+              Hostile architecture disproportionately affects marginalized communities,
+              including those who are homeless, disabled, or living in poverty.
+              By signing this petition to end hostile architecture in Helsinki,
+              we can help advocate for social justice and equity in our city. 
+              
             </p>
           </div>
           <ProgressBar newSignatures={reasonsForSinging} />
