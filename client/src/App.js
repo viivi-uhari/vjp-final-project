@@ -10,7 +10,7 @@ import NavigationBar from './components/NavigationBar';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="~makirik1">
     <NavigationBar></NavigationBar>
       <Routes>
         <Route path='/' element={<FrontPage/>}/>
