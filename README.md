@@ -1,6 +1,6 @@
 # Hostile Architecture - Website
 
-A website about hostile architecture that is created for Aalto University's course <em>CS-C1180 - Verkkojulkaisemisen perusteet</em> as the course's final project.
+A website about hostile architecture that has been created as a part of a course at Aalto University's.
 
 ## Running the Program - Client
 
