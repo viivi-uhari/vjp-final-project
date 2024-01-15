@@ -1,6 +1,6 @@
 # Hostile Architecture - Website
 
-A website about hostile architecture that has been created as a part of a course at Aalto University's.
+A website about hostile architecture that has been created as a part of a course at Aalto University.
 
 ## Running the Program - Client
 
